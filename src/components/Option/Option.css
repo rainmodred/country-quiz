@@ -1,0 +1,51 @@
+.option {
+  border-radius: 12px;
+  border: 2px solid var(--color-option-border);
+  background: none;
+  min-width: 400px;
+  max-height: 56px;
+  transition: all 0.2s ease-in;
+  color: var(--color-option-text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 15px 18px 14px 19px;
+}
+
+.option:hover {
+  background-color: var(--color-hover);
+  color: var(--color-white);
+  border: none;
+}
+
+.option > span {
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 500;
+}
+
+.option__id {
+  margin-right: 45px;
+}
+
+.option__text {
+  margin-right: auto;
+}
+
+.option--error {
+  background-color: var(--color-error-bg);
+  border: none;
+  color: var(--color-white);
+  pointer-events: none;
+}
+
+.option--error:hover {
+  background-color: currentColor;
+}
+
+.option--correct {
+  background-color: var(--color-correct-bg);
+  border: none;
+  color: var(--color-white);
+  pointer-events: none;
+}
