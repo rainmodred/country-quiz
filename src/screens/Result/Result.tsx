@@ -1,17 +1,21 @@
-import React from 'react';
 import Button from '../../components/Button/Button';
 import Winners from '../../images/winners.svg';
 import './Result.css';
 
-export default function Result() {
+interface ResultProps {
+  correctAnwers: number;
+  onNewQuiz: () => void;
+}
+
+export default function Result({ correctAnwers, onNewQuiz }: ResultProps) {
   return (
     <div className="result">
       <img src={Winners} alt="" className="quiz__result" />
       <h3 className="result__header">Results</h3>
       <p className="result__text">
-        You got <span>4</span> correct answers
+        You got <span>{correctAnwers}</span> correct answers
       </p>
-      <Button>Try again</Button>
+      <Button onClick={onNewQuiz}>Try again</Button>
     </div>
   );
 }

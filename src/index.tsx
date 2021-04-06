@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Quiz from './components/Quiz/Quiz';
+import App from './App';
+
 import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Quiz />
+    <App />
   </React.StrictMode>,
   document.getElementById('root'),
 );

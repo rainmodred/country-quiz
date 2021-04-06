@@ -32,7 +32,7 @@ function createAnswers(countries: Countries, correctAnswer: string): Answer[] {
 
   while (answers.length !== anwersQuantity) {
     const { capital } = getRandomCountry(countries);
-    if (answers.every(answer => answer.text !== capital)) {
+    if (capital !== '' && answers.every(answer => answer.text !== capital)) {
       answers.push({
         text: capital,
         correct: false,
@@ -48,11 +48,13 @@ function createQuestions(countries: Countries): Question[] {
   while (questions.length !== 10) {
     const country = getRandomCountry(countries);
     if (questions.every(question => question.name !== country.name)) {
+      const type = Math.random() > 0.5 ? 'flag' : 'capital';
       questions.push({
+        type,
         name: country.name,
         flag: country.flag,
-        question:
-          Math.random() > 0.5
+        text:
+          type === 'flag'
             ? `Which country does this flag belong to?`
             : `${country.capital} is the capital of`,
         asnwers: createAnswers(countries, country.name),
