@@ -2,9 +2,11 @@
   border-radius: 12px;
   border: 2px solid var(--color-option-border);
   background: none;
-  width: 400px;
   max-height: 56px;
-  transition: all 0.2s ease-in;
+  width: 100%;
+  max-width: 400px;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
   color: var(--color-option-text);
   cursor: pointer;
   display: flex;
@@ -41,7 +43,7 @@
 }
 
 .option--error:hover {
-  background-color: currentColor;
+  background-color: var(--color-error-bg);
 }
 
 .option--correct {
@@ -50,6 +52,13 @@
   color: var(--color-white);
 }
 
+.option--correct:hover {
+  background-color: var(--color-correct-bg);
+}
+
 .option--disabled {
   pointer-events: none;
+}
+
+@media (max-width: 768px) {
 }

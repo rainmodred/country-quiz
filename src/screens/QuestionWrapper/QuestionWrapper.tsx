@@ -30,12 +30,11 @@ export default function QuestionWrapper({
   const isWrong =
     disabled && currentAnswer !== '' && currentAnswer !== correctAnswer;
 
-  if (!question) {
-    return <p>Loading...</p>;
-  }
-
+  const classes = `${
+    question.type === 'flag' ? 'question question--flag' : 'question'
+  }`;
   return (
-    <div className="question">
+    <div className={classes}>
       {question.type === 'flag' && (
         <img src={question.flag} alt="flag" className="question__flag" />
       )}

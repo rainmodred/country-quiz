@@ -22,8 +22,20 @@ export default function Option({
 
   const classes = `option ${isError} ${isCorrect} ${isDisabled}`;
 
+  function handleClick(
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    answer: string,
+  ) {
+    event.currentTarget.blur();
+    onClick(answer);
+  }
+
   return (
-    <button onClick={() => onClick(text)} type="button" className={classes}>
+    <button
+      onClick={event => handleClick(event, text)}
+      type="button"
+      className={classes}
+    >
       <span className="option__id">A</span>
       <span className="option__text">{text}</span>
       {isError && <AiOutlineCloseCircle size="20" />}

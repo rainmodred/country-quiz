@@ -1,6 +1,6 @@
 .quiz {
   position: relative;
-  min-width: 464px;
+  max-width: 464px;
 }
 
 .quiz__header {
@@ -22,4 +22,20 @@
 .quiz__body {
   background-color: var(--color-white);
   border-radius: 24px;
+  display: grid;
+  grid-template-columns: minmax(0, 464px);
+  min-height: 515px;
+  place-items: center;
+}
+
+@media (max-width: 768px) {
+  .quiz__header {
+    font-size: 24px;
+    line-height: 24px;
+    margin-bottom: 10px;
+  }
+
+  .quiz__body {
+    min-height: 400px;
+  }
 }

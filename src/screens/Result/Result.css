@@ -4,21 +4,19 @@
   align-items: center;
   color: var(--color-result);
   padding: 49px 108px 33px 108px;
+  row-gap: 70px;
 }
 
 .result__header {
   font-size: 48px;
   line-height: 72px;
   font-weight: 700;
-
-  margin-top: 72px;
 }
 
 .result__text {
   font-size: 18px;
   line-height: 27px;
   font-weight: 400;
-  margin-bottom: 71px;
 }
 
 .result__text > span {
@@ -26,4 +24,11 @@
   line-height: 54px;
   color: var(--color-correct-bg);
   font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .result {
+    padding: 20px;
+    row-gap: 25px;
+  }
 }
