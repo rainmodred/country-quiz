@@ -17,6 +17,18 @@
   font-weight: 700;
 }
 
+.question__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 56px;
+}
+
+.question__count {
+  font-size: 14px;
+  margin-left: 5px;
+}
+
 @media (max-width: 768px) {
   .question {
     row-gap: 10px;

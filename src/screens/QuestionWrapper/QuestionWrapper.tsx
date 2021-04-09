@@ -8,6 +8,7 @@ import './QuestionWrapper.css';
 interface QuestionProps {
   question: Question;
   disabled: boolean;
+  questionIndex: number;
   onAnswerClick: (answer: boolean) => void;
   onNextClick: () => void;
 }
@@ -15,6 +16,7 @@ interface QuestionProps {
 export default function QuestionWrapper({
   question,
   disabled,
+  questionIndex,
   onAnswerClick,
   onNextClick,
 }: QuestionProps) {
@@ -50,11 +52,14 @@ export default function QuestionWrapper({
         />
       ))}
 
-      {disabled && (
-        <Button primary onClick={onNextClick}>
-          Next
-        </Button>
-      )}
+      <div className="question__footer">
+        <span className="question__count">{questionIndex + 1} / 10</span>
+        {disabled && (
+          <Button primary onClick={onNextClick}>
+            Next
+          </Button>
+        )}
+      </div>
     </div>
   );
 }

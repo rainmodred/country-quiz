@@ -59,6 +59,7 @@ function Quiz({ countries }: QuizProps) {
           <Result correctAnwers={correctAnswers} onNewQuiz={handleNewQuiz} />
         ) : (
           <QuestionWrapper
+            questionIndex={questionIndex}
             question={questions[questionIndex]}
             onAnswerClick={handleAnswerClick}
             onNextClick={handleNextQuestion}
