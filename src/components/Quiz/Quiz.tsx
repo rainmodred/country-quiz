@@ -1,20 +1,15 @@
 import { useEffect, useState } from 'react';
-import Logo from '../../images/adventure.svg';
-// import Winners from '../../images/winners.svg';
+import { useCountries } from 'hooks/queryHooks';
+import Spinner from 'components/Spinner/Spinner';
 import QuestionWrapper from '../../screens/QuestionWrapper/QuestionWrapper';
 import Result from '../../screens/Result/Result';
-import { Countries, Questions } from '../../types';
+import { Questions } from '../../types';
 import { createQuestions } from '../../utils';
-// import Button from '../Button/Button';
-// import Option from '../Option/Option';
+import Logo from '../../images/adventure.svg';
 import './Quiz.css';
 
-interface QuizProps {
-  countries: Countries;
-}
-
-function Quiz({ countries }: QuizProps) {
-  // remove from state
+function Quiz() {
+  const { countries, isSuccess } = useCountries();
   const [quizEnded, setQuizEnded] = useState(false);
 
   const [questions, setQuestions] = useState<Questions>([]);
@@ -39,34 +34,43 @@ function Quiz({ countries }: QuizProps) {
   }
 
   function handleNewQuiz() {
-    setQuestions(createQuestions(countries));
-    setCorrectAnswers(0);
-    setQuestionIndex(0);
-    setQuizEnded(false);
-    setDisabled(false);
+    if (countries) {
+      setQuestions(createQuestions(countries));
+      setCorrectAnswers(0);
+      setQuestionIndex(0);
+      setQuizEnded(false);
+      setDisabled(false);
+    }
   }
 
   useEffect(() => {
-    setQuestions(createQuestions(countries));
-  }, []);
+    handleNewQuiz();
+  }, [isSuccess]);
 
+  function renderQuestion() {
+    if (quizEnded) {
+      return (
+        <Result correctAnwers={correctAnswers} onNewQuiz={handleNewQuiz} />
+      );
+    }
+    if (questions.length > 0) {
+      return (
+        <QuestionWrapper
+          questionIndex={questionIndex}
+          question={questions[questionIndex]}
+          onAnswerClick={handleAnswerClick}
+          onNextClick={handleNextQuestion}
+          disabled={disabled}
+        />
+      );
+    }
+    return <Spinner />;
+  }
   return (
     <div className="quiz">
       <h2 className="quiz__header">country quiz</h2>
       {!quizEnded && <img className="quiz__logo" src={Logo} alt="" />}
-      <div className="quiz__body">
-        {quizEnded ? (
-          <Result correctAnwers={correctAnswers} onNewQuiz={handleNewQuiz} />
-        ) : (
-          <QuestionWrapper
-            questionIndex={questionIndex}
-            question={questions[questionIndex]}
-            onAnswerClick={handleAnswerClick}
-            onNextClick={handleNextQuestion}
-            disabled={disabled}
-          />
-        )}
-      </div>
+      <div className="quiz__body">{renderQuestion()}</div>
     </div>
   );
 }

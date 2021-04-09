@@ -1,7 +1,12 @@
+import { QueryClient, QueryClientProvider } from 'react-query';
 import Quiz from './components/Quiz/Quiz';
-// @ts-ignore
-import { countries } from './countries';
+
+const queryClient = new QueryClient();
 
 export default function App() {
-  return <Quiz countries={countries} />;
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Quiz />
+    </QueryClientProvider>
+  );
 }

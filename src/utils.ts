@@ -61,6 +61,7 @@ function createQuestions(countries: Countries): Question[] {
       });
     }
   }
+
   return questions;
 }
 
