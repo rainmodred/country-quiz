@@ -1,4 +1,6 @@
-export const countries = [
+import { Countries } from 'types';
+
+export const countries: Countries = [
   {
     name: 'Afghanistan',
     topLevelDomain: ['.af'],

@@ -2,6 +2,7 @@ import { AiOutlineCheckCircle, AiOutlineCloseCircle } from 'react-icons/ai';
 import './Option.css';
 
 interface OptionProps {
+  variant: string;
   text: string;
   disabled: boolean;
   onClick: (text: string) => void;
@@ -10,6 +11,7 @@ interface OptionProps {
 }
 
 export default function Option({
+  variant,
   text,
   error = false,
   correct = false,
@@ -36,10 +38,10 @@ export default function Option({
       type="button"
       className={classes}
     >
-      <span className="option__id">A</span>
+      <span className="option__id">{variant}</span>
       <span className="option__text">{text}</span>
-      {isError && <AiOutlineCloseCircle size="20" />}
-      {isCorrect && <AiOutlineCheckCircle size="20" />}
+      {isError && <AiOutlineCloseCircle size="20" title="closeIcon" />}
+      {isCorrect && <AiOutlineCheckCircle size="20" title="checkIcon" />}
     </button>
   );
 }

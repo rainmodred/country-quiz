@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useCountries } from 'hooks/queryHooks';
+import { useCountries } from 'hooks/useCountries';
 import Spinner from 'components/Spinner/Spinner';
 import QuestionWrapper from '../../screens/QuestionWrapper/QuestionWrapper';
 import Result from '../../screens/Result/Result';
@@ -8,26 +8,26 @@ import { createQuestions } from '../../utils';
 import Logo from '../../images/adventure.svg';
 import './Quiz.css';
 
-function Quiz() {
-  const { countries, isSuccess } = useCountries();
-  const [quizEnded, setQuizEnded] = useState(false);
+interface QuizProps {
+  totalQuestions: number;
+}
 
+function Quiz({ totalQuestions = 10 }: QuizProps) {
+  const { countries, isSuccess } = useCountries();
   const [questions, setQuestions] = useState<Questions>([]);
   const [questionIndex, setQuestionIndex] = useState(0);
   const [correctAnswers, setCorrectAnswers] = useState(0);
-  const [disabled, setDisabled] = useState(false);
+
+  const isQuizEnded =
+    questions.length > 0 && questionIndex === questions.length;
 
   function handleNextQuestion() {
-    if (questionIndex < questions.length - 1) {
+    if (questionIndex < questions.length) {
       setQuestionIndex(questionIndex + 1);
-      setDisabled(false);
-    } else {
-      setQuizEnded(true);
     }
   }
 
   function handleAnswerClick(isCorrect: boolean) {
-    setDisabled(true);
     if (isCorrect) {
       setCorrectAnswers(correctAnswers + 1);
     }
@@ -35,11 +35,9 @@ function Quiz() {
 
   function handleNewQuiz() {
     if (countries) {
-      setQuestions(createQuestions(countries));
+      setQuestions(createQuestions(countries, totalQuestions));
       setCorrectAnswers(0);
       setQuestionIndex(0);
-      setQuizEnded(false);
-      setDisabled(false);
     }
   }
 
@@ -48,7 +46,7 @@ function Quiz() {
   }, [isSuccess]);
 
   function renderQuestion() {
-    if (quizEnded) {
+    if (isQuizEnded) {
       return (
         <Result correctAnwers={correctAnswers} onNewQuiz={handleNewQuiz} />
       );
@@ -58,9 +56,9 @@ function Quiz() {
         <QuestionWrapper
           questionIndex={questionIndex}
           question={questions[questionIndex]}
+          totalQuestions={totalQuestions}
           onAnswerClick={handleAnswerClick}
           onNextClick={handleNextQuestion}
-          disabled={disabled}
         />
       );
     }
@@ -69,7 +67,7 @@ function Quiz() {
   return (
     <div className="quiz">
       <h2 className="quiz__header">country quiz</h2>
-      {!quizEnded && <img className="quiz__logo" src={Logo} alt="" />}
+      {!isQuizEnded && <img className="quiz__logo" src={Logo} alt="" />}
       <div className="quiz__body">{renderQuestion()}</div>
     </div>
   );

@@ -42,10 +42,10 @@ function createAnswers(countries: Countries, correctAnswer: string): Answer[] {
   return shuffle(answers);
 }
 
-function createQuestions(countries: Countries): Question[] {
+function createQuestions(countries: Countries, count: number = 10): Question[] {
   const questions: Questions = [];
 
-  while (questions.length !== 10) {
+  while (questions.length !== count) {
     const country = getRandomCountry(countries);
     if (questions.every(question => question.name !== country.name)) {
       const type = Math.random() > 0.5 ? 'flag' : 'capital';
@@ -65,4 +65,9 @@ function createQuestions(countries: Countries): Question[] {
   return questions;
 }
 
-export { createQuestions };
+function getVariant(index: number): string {
+  const variants = ['A', 'B', 'C', 'D'];
+  return variants[index];
+}
+
+export { createQuestions, getVariant };

@@ -1,5 +1,5 @@
-import { createQuestions } from './utils';
-import { countries } from './countries';
+import { createQuestions } from '../utils';
+import { countries } from '../countries';
 
 describe('create questions', () => {
   beforeAll(() => {});
