@@ -26,7 +26,6 @@ module.exports = {
     'react/prop-types': 0,
     'react/require-default-props': 0,
     'import/prefer-default-export': 0,
-    indent: ['error', 2],
     'linebreak-style': ['error', 'unix'],
     'no-undef': 'off',
     'no-console': 'warn',

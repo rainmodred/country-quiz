@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 import user from '@testing-library/user-event';
 import { Question } from 'types';
 
-import QuestionWrapper from '../../components/QuestionWrapper/QuestionWrapper';
+import QuestionWrapper from '../../components/QuestionWrapper';
 
 const flagQuestion: Question = {
   type: 'flag',

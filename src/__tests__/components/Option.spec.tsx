@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import Option from '../../components/Option/Option';
+import Option from '../../components/Option';
 
 describe('Option', () => {
   it('renders Option', () => {

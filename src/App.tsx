@@ -1,5 +1,5 @@
 import { QueryClient, QueryClientProvider } from 'react-query';
-import Quiz from './components/Quiz/Quiz';
+import Quiz from './components/Quiz';
 
 const queryClient = new QueryClient();
 

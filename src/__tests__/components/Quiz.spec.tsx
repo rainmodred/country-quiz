@@ -1,7 +1,7 @@
 import { fireEvent, render } from '@testing-library/react';
 import { useCountries } from 'hooks/useCountries';
 import { countries } from '../../countries';
-import Quiz from '../../components/Quiz/Quiz';
+import Quiz from '../../components/Quiz';
 
 jest.mock('../../hooks/useCountries', () => ({
   useCountries: jest.fn(),

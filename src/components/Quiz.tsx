@@ -1,12 +1,15 @@
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react';
 import { useEffect, useState } from 'react';
+
 import { useCountries } from 'hooks/useCountries';
-import Spinner from 'components/Spinner/Spinner';
-import QuestionWrapper from '../QuestionWrapper/QuestionWrapper';
-import Result from '../Result/Result';
-import { Questions } from '../../types';
-import { createQuestions } from '../../utils';
-import Logo from '../../images/adventure.svg';
-import './Quiz.css';
+import Spinner from 'components/Spinner';
+import QuestionWrapper from './QuestionWrapper';
+import Result from './Result';
+import { Questions } from '../types';
+import { createQuestions } from '../utils';
+import Logo from '../images/adventure.svg';
+import { colors } from '../styles/colors';
 
 interface QuizProps {
   totalQuestions: number;
@@ -65,10 +68,56 @@ function Quiz({ totalQuestions = 10 }: QuizProps) {
     return <Spinner />;
   }
   return (
-    <div className="quiz">
-      <h2 className="quiz__header">country quiz</h2>
-      {!isQuizEnded && <img className="quiz__logo" src={Logo} alt="" />}
-      <div className="quiz__body">{renderQuestion()}</div>
+    <div
+      css={css`
+        position: relative;
+        max-width: 464px;
+      `}
+    >
+      <h2
+        css={css`
+          color: ${colors.colorHeaderText};
+          font-size: 36px;
+          line-height: 54px;
+          font-weight: 700;
+          text-transform: uppercase;
+          @media (max-width: 768px) {
+            font-size: 24px;
+            line-height: 24px;
+            margin-bottom: 10px;
+          }
+        `}
+      >
+        country quiz
+      </h2>
+      {!isQuizEnded && (
+        <img
+          css={css`
+            position: absolute;
+            content: '';
+            display: block;
+            top: -20px;
+            right: 0;
+          `}
+          src={Logo}
+          alt=""
+        />
+      )}
+      <div
+        css={css`
+          background-color: ${colors.colorWhite};
+          border-radius: 24px;
+          display: grid;
+          grid-template-columns: minmax(0, 464px);
+          min-height: 515px;
+          place-items: center;
+          @media (max-width: 768px) {
+            min-height: 400px;
+          }
+        `}
+      >
+        {renderQuestion()}
+      </div>
     </div>
   );
 }

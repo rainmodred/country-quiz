@@ -3,7 +3,7 @@
 exports[`Button component renders Button 1`] = `
 <div>
   <button
-    class="button "
+    class="css-1edmrxn-Button"
     type="button"
   >
     button
