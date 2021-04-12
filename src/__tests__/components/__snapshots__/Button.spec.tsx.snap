@@ -1,9 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button component renders Button 1`] = `
+.emotion-0 {
+  border-radius: 12px;
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  padding: 18px 61px 17px 61px;
+  border: 2px solid rgba(29, 53, 93, 1);
+  color: rgba(29, 53, 93, 1);
+  background: none;
+  box-shadow: none;
+}
+
+.emotion-0:hover {
+  opacity: 0.7;
+}
+
 <div>
   <button
-    class="css-1edmrxn-Button"
+    class="emotion-0"
     type="button"
   >
     button

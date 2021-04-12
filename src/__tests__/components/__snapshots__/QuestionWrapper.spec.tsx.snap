@@ -1,26 +1,177 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`QuestionWrapper renders correct answer 1`] = `
+.emotion-0 {
+  padding: 68px 32px 64px 32px;
+  display: grid;
+  row-gap: 25px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .emotion-0 {
+    row-gap: 10px;
+    padding: 65px 25px 25px 25px;
+    padding-top: 65px;
+  }
+}
+
+.emotion-1 {
+  color: rgba(47, 82, 123, 1);
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .emotion-1 {
+    font-size: 24px;
+    line-height: 34px;
+  }
+}
+
+.emotion-2 {
+  border-radius: 12px;
+  border: none;
+  background: rgba(96, 191, 136, 1);
+  max-height: 56px;
+  width: 100%;
+  max-width: 400px;
+  overflow: hidden;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  color: rgba(255, 255, 255, 1);
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 15px 18px 14px 19px;
+  pointer-events: none;
+}
+
+.emotion-2>span {
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 500;
+}
+
+.emotion-2:hover {
+  background-color: rgba(96, 191, 136, 1);
+  color: rgba(255, 255, 255, 1);
+  border: none;
+}
+
+.emotion-3 {
+  margin-right: 45px;
+}
+
+.emotion-4 {
+  margin-right: auto;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.emotion-5 {
+  border-radius: 12px;
+  border: 2px solid rgba(96, 102, 208, 0.7);
+  background: none;
+  max-height: 56px;
+  width: 100%;
+  max-width: 400px;
+  overflow: hidden;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  color: rgba(96, 102, 208, 0.8);
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 15px 18px 14px 19px;
+  pointer-events: none;
+}
+
+.emotion-5>span {
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 500;
+}
+
+.emotion-5:hover {
+  background-color: rgba(249, 168, 38, 1);
+  color: rgba(255, 255, 255, 1);
+  border: none;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 56px;
+}
+
+.emotion-15 {
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+.emotion-16 {
+  border-radius: 12px;
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  padding: 15px 36px 14px 37px;
+  border: none;
+  color: rgba(255, 255, 255, 1);
+  background: rgba(249, 168, 38, 1);
+  box-shadow: 0px 2px 4px rgba(252, 168, 47, 0.4);
+}
+
+.emotion-16:hover {
+  opacity: 0.7;
+}
+
 <div>
   <div
-    class="css-11ud1ff-QuestionWrapper"
+    class="emotion-0"
   >
     <h3
-      class="css-1cjrmqs-QuestionWrapper"
+      class="emotion-1"
     >
       Bern is the capital of
     </h3>
     <button
-      class="css-4ptem4-Option"
+      class="emotion-2"
       type="button"
     >
       <span
-        class="css-13f8g8s-Option"
+        class="emotion-3"
       >
         A
       </span>
       <span
-        class="css-oh1baf-Option"
+        class="emotion-4"
       >
         Switzerland
       </span>
@@ -45,62 +196,62 @@ exports[`QuestionWrapper renders correct answer 1`] = `
       </svg>
     </button>
     <button
-      class="css-5v9hz0-Option"
+      class="emotion-5"
       type="button"
     >
       <span
-        class="css-13f8g8s-Option"
+        class="emotion-3"
       >
         B
       </span>
       <span
-        class="css-oh1baf-Option"
+        class="emotion-4"
       >
         Lisbon
       </span>
     </button>
     <button
-      class="css-5v9hz0-Option"
+      class="emotion-5"
       type="button"
     >
       <span
-        class="css-13f8g8s-Option"
+        class="emotion-3"
       >
         C
       </span>
       <span
-        class="css-oh1baf-Option"
+        class="emotion-4"
       >
         Brasília
       </span>
     </button>
     <button
-      class="css-5v9hz0-Option"
+      class="emotion-5"
       type="button"
     >
       <span
-        class="css-13f8g8s-Option"
+        class="emotion-3"
       >
         D
       </span>
       <span
-        class="css-oh1baf-Option"
+        class="emotion-4"
       >
         Quito
       </span>
     </button>
     <div
-      class="css-ipgmsr-QuestionWrapper"
+      class="emotion-14"
     >
       <span
-        class="css-17tonp7-QuestionWrapper"
+        class="emotion-15"
       >
         1
          / 
         10
       </span>
       <button
-        class="css-inaz0x-Button"
+        class="emotion-16"
         type="button"
       >
         Next
@@ -111,80 +262,174 @@ exports[`QuestionWrapper renders correct answer 1`] = `
 `;
 
 exports[`QuestionWrapper renders with capitalQuestion 1`] = `
+.emotion-0 {
+  padding: 68px 32px 64px 32px;
+  display: grid;
+  row-gap: 25px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .emotion-0 {
+    row-gap: 10px;
+    padding: 65px 25px 25px 25px;
+    padding-top: 65px;
+  }
+}
+
+.emotion-1 {
+  color: rgba(47, 82, 123, 1);
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .emotion-1 {
+    font-size: 24px;
+    line-height: 34px;
+  }
+}
+
+.emotion-2 {
+  border-radius: 12px;
+  border: 2px solid rgba(96, 102, 208, 0.7);
+  background: none;
+  max-height: 56px;
+  width: 100%;
+  max-width: 400px;
+  overflow: hidden;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  color: rgba(96, 102, 208, 0.8);
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 15px 18px 14px 19px;
+}
+
+.emotion-2>span {
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 500;
+}
+
+.emotion-2:hover {
+  background-color: rgba(249, 168, 38, 1);
+  color: rgba(255, 255, 255, 1);
+  border: none;
+}
+
+.emotion-3 {
+  margin-right: 45px;
+}
+
+.emotion-4 {
+  margin-right: auto;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 56px;
+}
+
+.emotion-15 {
+  font-size: 14px;
+  margin-left: 5px;
+}
+
 <div>
   <div
-    class="css-11ud1ff-QuestionWrapper"
+    class="emotion-0"
   >
     <h3
-      class="css-1cjrmqs-QuestionWrapper"
+      class="emotion-1"
     >
       Bern is the capital of
     </h3>
     <button
-      class="css-1yoohz3-Option"
+      class="emotion-2"
       type="button"
     >
       <span
-        class="css-13f8g8s-Option"
+        class="emotion-3"
       >
         A
       </span>
       <span
-        class="css-oh1baf-Option"
+        class="emotion-4"
       >
         Switzerland
       </span>
     </button>
     <button
-      class="css-1yoohz3-Option"
+      class="emotion-2"
       type="button"
     >
       <span
-        class="css-13f8g8s-Option"
+        class="emotion-3"
       >
         B
       </span>
       <span
-        class="css-oh1baf-Option"
+        class="emotion-4"
       >
         Lisbon
       </span>
     </button>
     <button
-      class="css-1yoohz3-Option"
+      class="emotion-2"
       type="button"
     >
       <span
-        class="css-13f8g8s-Option"
+        class="emotion-3"
       >
         C
       </span>
       <span
-        class="css-oh1baf-Option"
+        class="emotion-4"
       >
         Brasília
       </span>
     </button>
     <button
-      class="css-1yoohz3-Option"
+      class="emotion-2"
       type="button"
     >
       <span
-        class="css-13f8g8s-Option"
+        class="emotion-3"
       >
         D
       </span>
       <span
-        class="css-oh1baf-Option"
+        class="emotion-4"
       >
         Quito
       </span>
     </button>
     <div
-      class="css-ipgmsr-QuestionWrapper"
+      class="emotion-14"
     >
       <span
-        class="css-17tonp7-QuestionWrapper"
+        class="emotion-15"
       >
         1
          / 
@@ -196,85 +441,192 @@ exports[`QuestionWrapper renders with capitalQuestion 1`] = `
 `;
 
 exports[`QuestionWrapper renders with flagQuestion 1`] = `
+.emotion-0 {
+  padding: 68px 32px 64px 32px;
+  display: grid;
+  row-gap: 25px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .emotion-0 {
+    row-gap: 10px;
+    padding: 65px 25px 25px 25px;
+    padding-top: 20px;
+  }
+}
+
+.emotion-1 {
+  min-height: 56px;
+  width: 84px;
+  -webkit-filter: drop-shadow(0px 4px 24px rgba(0, 0, 0, 0.1));
+  filter: drop-shadow(0px 4px 24px rgba(0, 0, 0, 0.1));
+}
+
+@media (max-width: 768px) {
+  .emotion-1 {
+    padding-top: 20px;
+  }
+}
+
+.emotion-2 {
+  color: rgba(47, 82, 123, 1);
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .emotion-2 {
+    font-size: 24px;
+    line-height: 34px;
+  }
+}
+
+.emotion-3 {
+  border-radius: 12px;
+  border: 2px solid rgba(96, 102, 208, 0.7);
+  background: none;
+  max-height: 56px;
+  width: 100%;
+  max-width: 400px;
+  overflow: hidden;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  color: rgba(96, 102, 208, 0.8);
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 15px 18px 14px 19px;
+}
+
+.emotion-3>span {
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 500;
+}
+
+.emotion-3:hover {
+  background-color: rgba(249, 168, 38, 1);
+  color: rgba(255, 255, 255, 1);
+  border: none;
+}
+
+.emotion-4 {
+  margin-right: 45px;
+}
+
+.emotion-5 {
+  margin-right: auto;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.emotion-15 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 56px;
+}
+
+.emotion-16 {
+  font-size: 14px;
+  margin-left: 5px;
+}
+
 <div>
   <div
-    class="css-1nzzrsz-QuestionWrapper"
+    class="emotion-0"
   >
     <img
       alt="flag"
-      class="css-8dd1yu-QuestionWrapper"
+      class="emotion-1"
       src="https://restcountries.eu/data/deu.svg"
     />
     <h3
-      class="css-1cjrmqs-QuestionWrapper"
+      class="emotion-2"
     >
       Which country does this flag belong to?
     </h3>
     <button
-      class="css-1yoohz3-Option"
+      class="emotion-3"
       type="button"
     >
       <span
-        class="css-13f8g8s-Option"
+        class="emotion-4"
       >
         A
       </span>
       <span
-        class="css-oh1baf-Option"
+        class="emotion-5"
       >
         Basseterre
       </span>
     </button>
     <button
-      class="css-1yoohz3-Option"
+      class="emotion-3"
       type="button"
     >
       <span
-        class="css-13f8g8s-Option"
+        class="emotion-4"
       >
         B
       </span>
       <span
-        class="css-oh1baf-Option"
+        class="emotion-5"
       >
         Maputo
       </span>
     </button>
     <button
-      class="css-1yoohz3-Option"
+      class="emotion-3"
       type="button"
     >
       <span
-        class="css-13f8g8s-Option"
+        class="emotion-4"
       >
         C
       </span>
       <span
-        class="css-oh1baf-Option"
+        class="emotion-5"
       >
         Germany
       </span>
     </button>
     <button
-      class="css-1yoohz3-Option"
+      class="emotion-3"
       type="button"
     >
       <span
-        class="css-13f8g8s-Option"
+        class="emotion-4"
       >
         D
       </span>
       <span
-        class="css-oh1baf-Option"
+        class="emotion-5"
       >
         Dhaka
       </span>
     </button>
     <div
-      class="css-ipgmsr-QuestionWrapper"
+      class="emotion-15"
     >
       <span
-        class="css-17tonp7-QuestionWrapper"
+        class="emotion-16"
       >
         1
          / 
@@ -286,26 +638,213 @@ exports[`QuestionWrapper renders with flagQuestion 1`] = `
 `;
 
 exports[`QuestionWrapper renders wrong answer 1`] = `
+.emotion-0 {
+  padding: 68px 32px 64px 32px;
+  display: grid;
+  row-gap: 25px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .emotion-0 {
+    row-gap: 10px;
+    padding: 65px 25px 25px 25px;
+    padding-top: 65px;
+  }
+}
+
+.emotion-1 {
+  color: rgba(47, 82, 123, 1);
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .emotion-1 {
+    font-size: 24px;
+    line-height: 34px;
+  }
+}
+
+.emotion-2 {
+  border-radius: 12px;
+  border: none;
+  background: rgba(96, 191, 136, 1);
+  max-height: 56px;
+  width: 100%;
+  max-width: 400px;
+  overflow: hidden;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  color: rgba(255, 255, 255, 1);
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 15px 18px 14px 19px;
+  pointer-events: none;
+}
+
+.emotion-2>span {
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 500;
+}
+
+.emotion-2:hover {
+  background-color: rgba(96, 191, 136, 1);
+  color: rgba(255, 255, 255, 1);
+  border: none;
+}
+
+.emotion-3 {
+  margin-right: 45px;
+}
+
+.emotion-4 {
+  margin-right: auto;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.emotion-5 {
+  border-radius: 12px;
+  border: none;
+  background: rgba(234, 130, 130, 1);
+  max-height: 56px;
+  width: 100%;
+  max-width: 400px;
+  overflow: hidden;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  color: rgba(255, 255, 255, 1);
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 15px 18px 14px 19px;
+  pointer-events: none;
+}
+
+.emotion-5>span {
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 500;
+}
+
+.emotion-5:hover {
+  background-color: rgba(234, 130, 130, 1);
+  color: rgba(255, 255, 255, 1);
+  border: none;
+}
+
+.emotion-8 {
+  border-radius: 12px;
+  border: 2px solid rgba(96, 102, 208, 0.7);
+  background: none;
+  max-height: 56px;
+  width: 100%;
+  max-width: 400px;
+  overflow: hidden;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  color: rgba(96, 102, 208, 0.8);
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 15px 18px 14px 19px;
+  pointer-events: none;
+}
+
+.emotion-8>span {
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 500;
+}
+
+.emotion-8:hover {
+  background-color: rgba(249, 168, 38, 1);
+  color: rgba(255, 255, 255, 1);
+  border: none;
+}
+
+.emotion-14 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 56px;
+}
+
+.emotion-15 {
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+.emotion-16 {
+  border-radius: 12px;
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  padding: 15px 36px 14px 37px;
+  border: none;
+  color: rgba(255, 255, 255, 1);
+  background: rgba(249, 168, 38, 1);
+  box-shadow: 0px 2px 4px rgba(252, 168, 47, 0.4);
+}
+
+.emotion-16:hover {
+  opacity: 0.7;
+}
+
 <div>
   <div
-    class="css-11ud1ff-QuestionWrapper"
+    class="emotion-0"
   >
     <h3
-      class="css-1cjrmqs-QuestionWrapper"
+      class="emotion-1"
     >
       Bern is the capital of
     </h3>
     <button
-      class="css-4ptem4-Option"
+      class="emotion-2"
       type="button"
     >
       <span
-        class="css-13f8g8s-Option"
+        class="emotion-3"
       >
         A
       </span>
       <span
-        class="css-oh1baf-Option"
+        class="emotion-4"
       >
         Switzerland
       </span>
@@ -330,16 +869,16 @@ exports[`QuestionWrapper renders wrong answer 1`] = `
       </svg>
     </button>
     <button
-      class="css-1wf7kng-Option"
+      class="emotion-5"
       type="button"
     >
       <span
-        class="css-13f8g8s-Option"
+        class="emotion-3"
       >
         B
       </span>
       <span
-        class="css-oh1baf-Option"
+        class="emotion-4"
       >
         Lisbon
       </span>
@@ -364,47 +903,47 @@ exports[`QuestionWrapper renders wrong answer 1`] = `
       </svg>
     </button>
     <button
-      class="css-5v9hz0-Option"
+      class="emotion-8"
       type="button"
     >
       <span
-        class="css-13f8g8s-Option"
+        class="emotion-3"
       >
         C
       </span>
       <span
-        class="css-oh1baf-Option"
+        class="emotion-4"
       >
         Brasília
       </span>
     </button>
     <button
-      class="css-5v9hz0-Option"
+      class="emotion-8"
       type="button"
     >
       <span
-        class="css-13f8g8s-Option"
+        class="emotion-3"
       >
         D
       </span>
       <span
-        class="css-oh1baf-Option"
+        class="emotion-4"
       >
         Quito
       </span>
     </button>
     <div
-      class="css-ipgmsr-QuestionWrapper"
+      class="emotion-14"
     >
       <span
-        class="css-17tonp7-QuestionWrapper"
+        class="emotion-15"
       >
         1
          / 
         10
       </span>
       <button
-        class="css-inaz0x-Button"
+        class="emotion-16"
         type="button"
       >
         Next
