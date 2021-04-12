@@ -21,14 +21,18 @@ export default function Result({ correctAnwers, onNewQuiz }: ResultProps) {
         padding: 49px 108px 33px 108px;
         row-gap: 70px;
         @media (max-width: 768px) {
-          .result {
-            padding: 20px;
-            row-gap: 25px;
-          }
+          padding: 20px;
+          row-gap: 25px;
         }
       `}
     >
-      <img src={Winners} alt="" />
+      <img
+        css={css`
+          min-height: 136px;
+        `}
+        src={Winners}
+        alt=""
+      />
       <h3
         css={css`
           font-size: 48px;
