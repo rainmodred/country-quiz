@@ -12,6 +12,12 @@ describe('Quiz', () => {
     useCountries.mockImplementation(() => ({}));
   });
 
+  it('shows a spinner while loading', () => {
+    useCountries.mockImplementation(() => ({}));
+    const { getByTitle } = render(<Quiz totalQuestions={1} />);
+    expect(getByTitle(/spinner/i)).toBeTruthy();
+  });
+
   it('quiz can be ended', () => {
     useCountries.mockImplementation(() => ({
       countries,

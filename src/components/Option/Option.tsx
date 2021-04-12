@@ -1,24 +1,23 @@
 import { AiOutlineCheckCircle, AiOutlineCloseCircle } from 'react-icons/ai';
+import { Answer } from 'types';
 import './Option.css';
 
 interface OptionProps {
-  variant: string;
-  text: string;
+  answer: Answer;
+  wrong?: boolean;
   disabled: boolean;
-  onClick: (text: string) => void;
-  error?: boolean;
-  correct?: boolean;
+  onClick: (answer: Answer) => void;
 }
 
 export default function Option({
-  variant,
-  text,
-  error = false,
-  correct = false,
+  answer,
   disabled = false,
+  wrong = false,
   onClick,
 }: OptionProps): JSX.Element {
-  const isError = error && disabled ? 'option--error' : '';
+  const { variant, text, correct } = answer;
+
+  const isError = wrong && disabled ? 'option--error' : '';
   const isCorrect = correct && disabled ? 'option--correct' : '';
   const isDisabled = disabled ? 'option--disabled' : '';
 
@@ -26,15 +25,15 @@ export default function Option({
 
   function handleClick(
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
-    answer: string,
+    currentAnswer: Answer,
   ) {
     event.currentTarget.blur();
-    onClick(answer);
+    onClick(currentAnswer);
   }
 
   return (
     <button
-      onClick={event => handleClick(event, text)}
+      onClick={event => handleClick(event, answer)}
       type="button"
       className={classes}
     >

@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useCountries } from 'hooks/useCountries';
 import Spinner from 'components/Spinner/Spinner';
-import QuestionWrapper from '../../screens/QuestionWrapper/QuestionWrapper';
-import Result from '../../screens/Result/Result';
+import QuestionWrapper from '../QuestionWrapper/QuestionWrapper';
+import Result from '../Result/Result';
 import { Questions } from '../../types';
 import { createQuestions } from '../../utils';
 import Logo from '../../images/adventure.svg';

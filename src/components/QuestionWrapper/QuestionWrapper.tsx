@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
-import { getVariant } from 'utils';
-import Button from '../../components/Button/Button';
-import Option from '../../components/Option/Option';
-import { Question } from '../../types';
-
+import Button from '../Button/Button';
+import Option from '../Option/Option';
+import { Answer, Question } from '../../types';
 import './QuestionWrapper.css';
 
 interface QuestionProps {
@@ -21,23 +19,20 @@ export default function QuestionWrapper({
   onAnswerClick,
   onNextClick,
 }: QuestionProps) {
-  const [currentAnswer, setCurrentAnswer] = useState('');
+  const [currentAnswer, setCurrentAnswer] = useState<Answer | null>(null);
   const [disabled, setDisabled] = useState(false);
-  const correctAnswer = question?.asnwers.filter(ans => ans.correct)[0].text;
 
-  function handleOptionClick(text: string) {
-    setCurrentAnswer(text);
+  function handleOptionClick(answer: Answer) {
     setDisabled(true);
-    onAnswerClick(text === correctAnswer);
+    setCurrentAnswer(answer);
+    onAnswerClick(answer.correct);
   }
 
   useEffect(() => {
     setDisabled(false);
   }, [question]);
 
-  // WTF IS THIS
-  const isWrong =
-    disabled && currentAnswer !== '' && currentAnswer !== correctAnswer;
+  const isWrong = disabled && !currentAnswer?.correct;
 
   const classes = `${
     question.type === 'flag' ? 'question question--flag' : 'question'
@@ -48,12 +43,10 @@ export default function QuestionWrapper({
         <img src={question.flag} alt="flag" className="question__flag" />
       )}
       <h3 className="question__header">{question.text}</h3>
-      {question.asnwers.map((answer, answerIndex) => (
+      {question.asnwers.map(answer => (
         <Option
-          variant={getVariant(answerIndex)}
-          text={answer.text}
-          correct={answer.correct}
-          error={isWrong && answer.text === currentAnswer}
+          answer={answer}
+          wrong={isWrong && answer.text === currentAnswer?.text}
           disabled={disabled}
           onClick={handleOptionClick}
           key={answer.text}

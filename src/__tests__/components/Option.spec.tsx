@@ -4,7 +4,11 @@ import Option from '../../components/Option/Option';
 describe('Option', () => {
   it('renders Option', () => {
     const { container, getByText } = render(
-      <Option text="test" onClick={() => {}} disabled={false} />,
+      <Option
+        answer={{ variant: 'A', text: 'test', correct: false }}
+        onClick={() => {}}
+        disabled={false}
+      />,
     );
 
     expect(getByText(/test/i)).toBeTruthy();
@@ -12,7 +16,11 @@ describe('Option', () => {
   });
   it('renders correct Option', () => {
     const { container, getByText, queryByTitle } = render(
-      <Option text="test" onClick={() => {}} disabled correct />,
+      <Option
+        answer={{ variant: 'A', text: 'test', correct: true }}
+        onClick={() => {}}
+        disabled
+      />,
     );
 
     expect(getByText(/test/i)).toBeTruthy();
@@ -21,7 +29,12 @@ describe('Option', () => {
   });
   it('renders wrong Option', () => {
     const { container, getByText, queryByTitle } = render(
-      <Option text="test" onClick={() => {}} disabled error />,
+      <Option
+        answer={{ variant: 'A', text: 'test', correct: false }}
+        onClick={() => {}}
+        disabled
+        wrong
+      />,
     );
 
     expect(getByText(/test/i)).toBeTruthy();

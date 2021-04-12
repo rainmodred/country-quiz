@@ -59,6 +59,7 @@ interface Country {
 }
 
 interface Answer {
+  variant: string;
   text: string;
   correct: boolean;
 }

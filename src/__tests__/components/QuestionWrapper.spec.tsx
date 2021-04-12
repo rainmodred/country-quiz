@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 import user from '@testing-library/user-event';
 import { Question } from 'types';
 
-import QuestionWrapper from '../../screens/QuestionWrapper/QuestionWrapper';
+import QuestionWrapper from '../../components/QuestionWrapper/QuestionWrapper';
 
 const flagQuestion: Question = {
   type: 'flag',
@@ -11,18 +11,22 @@ const flagQuestion: Question = {
   text: 'Which country does this flag belong to?',
   asnwers: [
     {
+      variant: 'A',
       text: 'Basseterre',
       correct: false,
     },
     {
+      variant: 'B',
       text: 'Maputo',
       correct: false,
     },
     {
+      variant: 'C',
       text: 'Germany',
       correct: true,
     },
     {
+      variant: 'D',
       text: 'Dhaka',
       correct: false,
     },
@@ -36,18 +40,22 @@ const capitalQuestion: Question = {
   text: 'Bern is the capital of',
   asnwers: [
     {
+      variant: 'A',
       text: 'Switzerland',
       correct: true,
     },
     {
+      variant: 'B',
       text: 'Lisbon',
       correct: false,
     },
     {
+      variant: 'C',
       text: 'Brasília',
       correct: false,
     },
     {
+      variant: 'D',
       text: 'Quito',
       correct: false,
     },

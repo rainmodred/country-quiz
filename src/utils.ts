@@ -7,16 +7,6 @@ import {
   Answers,
 } from './types';
 
-function shuffle<T>(array: T[]) {
-  const copy = [...array];
-  for (let i = array.length - 1; i > 0; i -= 1) {
-    const j = Math.floor(Math.random() * (i + 1));
-
-    [copy[i], copy[j]] = [copy[j], copy[i]];
-  }
-  return copy;
-}
-
 function getRandomCountry(countries: Countries): Country {
   return countries[Math.floor(Math.random() * countries.length)];
 }
@@ -24,40 +14,51 @@ function getRandomCountry(countries: Countries): Country {
 function createAnswers(countries: Countries, correctAnswer: string): Answer[] {
   const anwersQuantity = 4;
   const answers: Answers = [];
+  const variants = ['A', 'B', 'C', 'D'];
+
+  const variant = variants
+    .splice(Math.floor(Math.random() * anwersQuantity), 1)
+    .join('');
 
   answers.push({
+    variant,
     text: correctAnswer,
     correct: true,
   });
 
   while (answers.length !== anwersQuantity) {
     const { capital } = getRandomCountry(countries);
-    if (capital !== '' && answers.every(answer => answer.text !== capital)) {
+    if (
+      variants.length > 0 &&
+      capital !== '' &&
+      answers.every(answer => answer.text !== capital)
+    ) {
       answers.push({
+        variant: variants.pop() as string,
         text: capital,
         correct: false,
       });
     }
   }
-  return shuffle(answers);
+  return answers.sort((a, b) => a.variant.localeCompare(b.variant));
 }
 
 function createQuestions(countries: Countries, count: number = 10): Question[] {
   const questions: Questions = [];
 
   while (questions.length !== count) {
-    const country = getRandomCountry(countries);
-    if (questions.every(question => question.name !== country.name)) {
+    const { name, flag, capital } = getRandomCountry(countries);
+    if (questions.every(question => question.name !== name)) {
       const type = Math.random() > 0.5 ? 'flag' : 'capital';
       questions.push({
         type,
-        name: country.name,
-        flag: country.flag,
+        name,
+        flag,
         text:
           type === 'flag'
             ? `Which country does this flag belong to?`
-            : `${country.capital} is the capital of`,
-        asnwers: createAnswers(countries, country.name),
+            : `${capital} is the capital of`,
+        asnwers: createAnswers(countries, name),
       });
     }
   }
@@ -65,9 +66,4 @@ function createQuestions(countries: Countries, count: number = 10): Question[] {
   return questions;
 }
 
-function getVariant(index: number): string {
-  const variants = ['A', 'B', 'C', 'D'];
-  return variants[index];
-}
-
-export { createQuestions, getVariant };
+export { createQuestions };
