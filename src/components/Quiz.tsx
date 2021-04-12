@@ -45,6 +45,17 @@ function Quiz({ totalQuestions = 10 }: QuizProps) {
   }
 
   useEffect(() => {
+    if (questions.length > 0) {
+      questions.forEach(({ type, flag }) => {
+        if (type === 'flag') {
+          const img = new Image();
+          img.src = flag;
+        }
+      });
+    }
+  }, [questions]);
+
+  useEffect(() => {
     handleNewQuiz();
   }, [isSuccess]);
 

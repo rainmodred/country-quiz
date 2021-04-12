@@ -58,6 +58,7 @@ export default function QuestionWrapper({
           src={flag}
           alt="flag"
           css={css`
+            min-height: 56px;
             width: 84px;
             filter: drop-shadow(0px 4px 24px rgba(0, 0, 0, 0.1));
             @media (max-width: 768px) {
