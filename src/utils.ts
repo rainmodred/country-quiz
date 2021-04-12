@@ -48,19 +48,18 @@ function createQuestions(countries: Countries, count: number = 10): Question[] {
 
   while (questions.length !== count) {
     const { name, flag, capital } = getRandomCountry(countries);
-    if (questions.every(question => question.name !== name)) {
-      const type = Math.random() > 0.5 ? 'flag' : 'capital';
-      questions.push({
-        type,
-        name,
-        flag,
-        text:
-          type === 'flag'
-            ? `Which country does this flag belong to?`
-            : `${capital} is the capital of`,
-        asnwers: createAnswers(countries, name),
-      });
-    }
+
+    const type = Math.random() > 0.5 ? 'flag' : 'capital';
+    questions.push({
+      type,
+      name,
+      flag,
+      text:
+        type === 'flag'
+          ? `Which country does this flag belong to?`
+          : `${capital} is the capital of`,
+      asnwers: createAnswers(countries, name),
+    });
   }
 
   return questions;
