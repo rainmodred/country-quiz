@@ -6,6 +6,7 @@ import { useCountries } from 'hooks/useCountries';
 import Spinner from 'components/Spinner';
 import QuestionWrapper from './QuestionWrapper';
 import Result from './Result';
+import Error from './Error';
 import { Questions } from '../types';
 import { createQuestions } from '../utils';
 import Logo from '../images/adventure.svg';
@@ -16,7 +17,7 @@ interface QuizProps {
 }
 
 function Quiz({ totalQuestions = 10 }: QuizProps) {
-  const { countries, isSuccess } = useCountries();
+  const { countries, isSuccess, isError, error } = useCountries();
   const [questions, setQuestions] = useState<Questions>([]);
   const [questionIndex, setQuestionIndex] = useState(0);
   const [correctAnswers, setCorrectAnswers] = useState(0);
@@ -60,6 +61,9 @@ function Quiz({ totalQuestions = 10 }: QuizProps) {
   }, [isSuccess]);
 
   function renderQuestion() {
+    if (isError) {
+      return <Error message={error?.message} />;
+    }
     if (isQuizEnded) {
       return (
         <Result correctAnwers={correctAnswers} onNewQuiz={handleNewQuiz} />

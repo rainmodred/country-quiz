@@ -29,4 +29,17 @@ describe('Quiz', () => {
 
     expect(getByText(/Result/i)).toBeTruthy();
   });
+
+  it('shows Error onError', () => {
+    useCountries.mockImplementation(() => ({
+      isError: true,
+      error: {
+        message: '404',
+      },
+    }));
+
+    const { getByText } = render(<Quiz totalQuestions={1} />);
+
+    expect(getByText(/Error/i)).toBeTruthy();
+  });
 });
