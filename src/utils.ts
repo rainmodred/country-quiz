@@ -50,6 +50,10 @@ function createQuestions(countries: Countries, count: number = 10): Question[] {
     const { name, flag, capital } = getRandomCountry(countries);
 
     const type = Math.random() > 0.5 ? 'flag' : 'capital';
+    if (type === 'capital' && capital === '') {
+      continue;
+    }
+
     questions.push({
       type,
       name,
